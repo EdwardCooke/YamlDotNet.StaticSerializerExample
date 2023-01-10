@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vecc.YamlDotNet.Analyzers.StaticGenerator" Version="0.0.3" />
-    <PackageReference Include="Vecc.YamlDotNet" Version="0.0.1-aot" />
+    <PackageReference Include="Vecc.YamlDotNet.Analyzers.StaticGenerator" Version="0.0.4" />
+    <PackageReference Include="Vecc.YamlDotNet" Version="0.0.2-aot" />
   </ItemGroup>
 
 </Project>

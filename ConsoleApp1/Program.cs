@@ -96,6 +96,27 @@ var serializer = new StaticSerializerBuilder(aotContext)
 var output = serializer.Serialize(x);
 Console.WriteLine(output);
 
+
+
+Console.WriteLine("Example from ivanjx");
+yaml = @"
+x1: hello
+x2: world
+x3: 1
+x4: 2
+x5: good
+X6: bye";
+input = new StringReader(yaml);
+var deserializerIvanjx = new DeserializerBuilder().Build();
+var ivanjx = deserializerIvanjx.Deserialize<InternalTestYamlEntry>(input);
+Console.WriteLine("x1: {0}", ivanjx.X1);
+Console.WriteLine("x2: {0}", ivanjx.X2);
+Console.WriteLine("x3: {0}", ivanjx.X3);
+Console.WriteLine("x4: {0}", ivanjx.X4);
+Console.WriteLine("x5: {0}", ivanjx.X5);
+Console.WriteLine("X6: {0}", ivanjx.X6);
+
+
 [YamlSerializable]
 public class MyArray
 {
@@ -143,7 +164,51 @@ public enum MyTestEnum
     Z = 1,
 }
 
+[YamlSerializable]
+public class InternalTestYamlEntry
+{
+    [YamlMember(Alias = "x1")]
+    public string? X1
+    {
+        get;
+        set;
+    }
 
+    [YamlMember(Alias = "x2")]
+    public string? X2
+    {
+        get;
+        set;
+    }
+
+    [YamlMember(Alias = "x3")]
+    public long? X3
+    {
+        get;
+        set;
+    }
+
+    [YamlMember(Alias = "x4")]
+    public long? X4
+    {
+        get;
+        set;
+    }
+
+    [YamlMember(Alias = "x5")]
+    public string? X5
+    {
+        get;
+        set;
+    }
+
+    [YamlMember(Alias = "X6")]
+    public string? X6
+    {
+        get;
+        set;
+    }
+}
 
 namespace YamlDotNet.Static
 {
